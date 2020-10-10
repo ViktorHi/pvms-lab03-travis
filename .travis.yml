@@ -28,6 +28,15 @@ compiler:
 # Build steps
 script: 
   - cd ${TRAVIS_BUILD_DIR}
+  - autoscan
+  - echo "AM_INIT_AUTOMAKE" >> ./configure.scan
+  - mv configure.scan configure.in
+  - aclocal
+  - autoconf
+  - autoheader
+  - touch NEWS README AUTHORS ChangeLog
+  - automake --add-missing
+  - configure
   - make
 
 
