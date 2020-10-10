@@ -39,7 +39,7 @@ script:
   - autoheader
   - touch NEWS README AUTHORS ChangeLog
   - automake --add-missing
-  - configure
+  - ./configure
   - make
 
 
